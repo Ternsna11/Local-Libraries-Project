@@ -1,11 +1,8 @@
-function findAccountById(accounts, id) {
+function findAccountById(accounts, id) { // use the find() method to search userInfo to see if userInfo[id] = id we want to find 
   return (matched = accounts.find((userInfo) => userInfo["id"] === id));
-  // let matched = {}
-  // for (let id in accounts);
-  // const userId = accounts.id;
-  //if (userId === id)
+  
 }
-function sortAccountsByLastName(accounts) {
+function sortAccountsByLastName(accounts) { // use the sort() method to sort by last name, remember to us toLowerCase for a proper sort.
   return accountsLastName = accounts.sort((nameA, nameB) =>
     nameA.name.last.toLowerCase() > nameB.name.last.toLowerCase() ? 1 : -1
   );
@@ -13,10 +10,10 @@ function sortAccountsByLastName(accounts) {
   // use sort method to order last names a-z
 
 function getTotalNumberOfBorrows(account, books) {
-  return results = books.reduce((acc, book) => { 
-    const countPerBook = book.borrows.reduce((accBorrow, borrow)=> {
-      return borrow.id === account.id ? accBorrow + 1 : accBorrow },0) 
-      return acc + countPerBook },0)
+  return results = books.reduce((acc, book) => { //reduce books object
+    const countPerBook = book.borrows.reduce((accBorrow, borrow)=> { // while reducing(used like a for loop) make variable saving book borrows which we also reduce 
+      return borrow.id === account.id ? accBorrow + 1 : accBorrow },0) // ternary statemnet of borrow id = account id borrow +1 else accBorrow(nothing) start @ 0
+      return acc + countPerBook },0) // return the other; reduce acc + countPerBook, 0
   
   }
 // --------OTHER SOLUTIONS -------
